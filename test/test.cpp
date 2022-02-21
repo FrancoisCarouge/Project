@@ -38,15 +38,16 @@ For more information, please refer to <https://unlicense.org> */
 
 #include <cassert>
 
+#include "fcarouge/project.hpp"
+
 namespace fcarouge::test
 {
 namespace
 {
-
 //! @test Verify the code.
-[[maybe_unused]] constexpr auto test = []() {
-       static_assert(true, "Compile-time test.");
-       assert(true && "Run-time test.");
+[[maybe_unused]] constexpr auto ctest = []() {
+  static_assert(true, "Compile-time test.");
+  assert(true && "Run-time test.");
 
   return 0;
 }();

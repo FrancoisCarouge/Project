@@ -38,23 +38,24 @@ For more information, please refer to <https://unlicense.org> */
 
 #include <benchmark/benchmark.h>
 #include <cassert>
+#include <chrono>
 
 namespace fcarouge::benchmark
 {
 namespace
 {
-//! @benchmark Measure the performance of the container's clearing algorithm.
-void clear(benchmark::State &state)
+//! @benchmark Measure performance.
+void bench(::benchmark::State &state)
 {
   for (auto _ : state) {
     for (int i = 0; i < state.range(0); ++i) {
     }
-    benchmark::ClobberMemory();
+    ::benchmark::ClobberMemory();
     const auto start{ std::chrono::high_resolution_clock::now() };
 
     // Measure.
 
-    benchmark::ClobberMemory();
+    ::benchmark::ClobberMemory();
     const auto end{ std::chrono::high_resolution_clock::now() };
 
     state.SetIterationTime(
@@ -63,9 +64,9 @@ void clear(benchmark::State &state)
   }
 }
 
-BENCHMARK(benchmark)
-    ->Name("Benchmark")
-    ->Unit(benchmark::kNanosecond)
+BENCHMARK(bench)
+    ->Name("Bench")
+    ->Unit(::benchmark::kNanosecond)
     ->ComputeStatistics("min",
                         [](const std::vector<double> &v) -> double {
                           return *(
@@ -78,7 +79,7 @@ BENCHMARK(benchmark)
                         })
     ->Arg(0)
     ->UseManualTime()
-    ->Complexity(benchmark::oAuto)
+    ->Complexity(::benchmark::oAuto)
     ->DisplayAggregatesOnly(true)
     ->RangeMultiplier(2)
     ->Repetitions(10)

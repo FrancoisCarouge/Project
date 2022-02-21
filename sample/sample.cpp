@@ -42,11 +42,10 @@ namespace fcarouge::sample
 {
 namespace
 {
-
 //! @test Demonstrate the code.
 [[maybe_unused]] constexpr auto sample = []() {
-       static_assert(true, "Compile-time demonstration.");
-       assert(true && "Run-time demonstration.");
+  static_assert(true, "Compile-time demonstration.");
+  assert(true && "Run-time demonstration.");
 
   return 0;
 }();
