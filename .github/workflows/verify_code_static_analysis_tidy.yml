@@ -1,0 +1,23 @@
+name: "Test Static Analysis: ClangTidy"
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
+    - name: Update
+      run: sudo apt update
+    - name: Workaround
+      # https://github.com/actions/virtual-environments/issues/1536
+      run: sudo apt-get remove libllvm10
+    - name: Install
+      run: sudo apt install clang-tidy-10
+    - name: Tidy
+      run: clang-tidy-10 include/fcarouge/project.hpp --warnings-as-errors=* -- -std=c++23
