@@ -92,12 +92,13 @@ $(document).ready(function(){initNavTree('benchmark_8cpp.xhtml',''); initResizab
 <div class="contents">
 <div class="textblock"><code>#include &lt;benchmark/benchmark.h&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for benchmark.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="benchmark_8cpp__incl.svg" width="264" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="benchmark_8cpp__incl.svg" width="351" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -116,10 +117,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3e3a46ce679cdd2992ef4d401ae35acc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a3e3a46ce679cdd2992ef4d401ae35acc">fcarouge::benchmark::anonymous_namespace{benchmark.cpp}::clear</a> (benchmark::State &amp;state)</td></tr>
-<tr class="separator:a3e3a46ce679cdd2992ef4d401ae35acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a040b125e85bc9bb4098d4910a738dcfe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a040b125e85bc9bb4098d4910a738dcfe">fcarouge::benchmark::anonymous_namespace{benchmark.cpp}::Name</a> (&quot;Benchmark&quot;) -&gt; Unit(benchmark::kNanosecond) -&gt;ComputeStatistics(&quot;min&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::min_element(std::begin(v), std::end(v)));}) -&gt;ComputeStatistics(&quot;max&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::max_element(std::begin(v), std::end(v)));}) -&gt;Arg(0) -&gt;UseManualTime() -&gt;Complexity(benchmark::oAuto) -&gt;DisplayAggregatesOnly(true) -&gt;RangeMultiplier(2) -&gt;Repetitions(10) -&gt;Range(1, 1&lt;&lt; 28)</td></tr>
-<tr class="separator:a040b125e85bc9bb4098d4910a738dcfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0085ad9314d6941d08b21f0e515b657d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a0085ad9314d6941d08b21f0e515b657d">fcarouge::benchmark::anonymous_namespace{benchmark.cpp}::bench</a> (::benchmark::State &amp;state)</td></tr>
+<tr class="separator:a0085ad9314d6941d08b21f0e515b657d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a399584f63a6ad625e0ae550bd61c3908"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a399584f63a6ad625e0ae550bd61c3908">fcarouge::benchmark::anonymous_namespace{benchmark.cpp}::Name</a> (&quot;Bench&quot;) -&gt; Unit(::benchmark::kNanosecond) -&gt;ComputeStatistics(&quot;min&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::min_element(std::begin(v), std::end(v)));}) -&gt;ComputeStatistics(&quot;max&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::max_element(std::begin(v), std::end(v)));}) -&gt;Arg(0) -&gt;UseManualTime() -&gt;Complexity(::benchmark::oAuto) -&gt;DisplayAggregatesOnly(true) -&gt;RangeMultiplier(2) -&gt;Repetitions(10) -&gt;Range(1, 1&lt;&lt; 28)</td></tr>
+<tr class="separator:a399584f63a6ad625e0ae550bd61c3908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -127,7 +128,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_44cec6e3ea30e076b9313c4641539d9f.xhtml">benchmark</a></li><li class="navelem"><a class="el" href="benchmark_8cpp.xhtml">benchmark.cpp</a></li>
-    <li class="footer">Generated on Mon Feb 21 2022 23:25:59 for Project by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Feb 22 2022 04:15:42 for Project by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

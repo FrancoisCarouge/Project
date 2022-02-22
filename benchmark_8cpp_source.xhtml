@@ -127,62 +127,63 @@ $(document).ready(function(){initNavTree('benchmark_8cpp_source.xhtml',''); init
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;benchmark/benchmark.h&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespacefcarouge.xhtml">   42</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefcarouge_1_1benchmark.xhtml">fcarouge::benchmark</a></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml">   44</a></span>&#160;<span class="keyword">namespace</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a3e3a46ce679cdd2992ef4d401ae35acc">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a3e3a46ce679cdd2992ef4d401ae35acc">clear</a>(benchmark::State &amp;state)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : state) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; state.range(0); ++i) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    benchmark::ClobberMemory();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> start{ std::chrono::high_resolution_clock::now() };</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Measure.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    benchmark::ClobberMemory();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> end{ std::chrono::high_resolution_clock::now() };</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    state.SetIterationTime(</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::chrono::duration_cast&lt;std::chrono::duration&lt;double&gt;&gt;(end - start)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            .count());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;BENCHMARK(benchmark)</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a040b125e85bc9bb4098d4910a738dcfe">   67</a></span>&#160;    -&gt;Name(<span class="stringliteral">&quot;Benchmark&quot;</span>)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    -&gt;Unit(benchmark::kNanosecond)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    -&gt;ComputeStatistics(<span class="stringliteral">&quot;min&quot;</span>,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        [](<span class="keyword">const</span> std::vector&lt;double&gt; &amp;v) -&gt; <span class="keywordtype">double</span> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                          <span class="keywordflow">return</span> *(</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                              std::min_element(std::begin(v), std::end(v)));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        })</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    -&gt;ComputeStatistics(<span class="stringliteral">&quot;max&quot;</span>,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        [](<span class="keyword">const</span> std::vector&lt;double&gt; &amp;v) -&gt; <span class="keywordtype">double</span> {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                          <span class="keywordflow">return</span> *(</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                              std::max_element(std::begin(v), std::end(v)));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        })</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    -&gt;Arg(0)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    -&gt;UseManualTime()</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    -&gt;Complexity(benchmark::oAuto)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    -&gt;DisplayAggregatesOnly(<span class="keyword">true</span>)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    -&gt;RangeMultiplier(2)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    -&gt;Repetitions(10)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    -&gt;Range(1, 1 &lt;&lt; 28);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace fcarouge::benchmark</span></div>
-<div class="ttc" id="anamespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03_xhtml_a3e3a46ce679cdd2992ef4d401ae35acc"><div class="ttname"><a href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a3e3a46ce679cdd2992ef4d401ae35acc">fcarouge::benchmark::anonymous_namespace{benchmark.cpp}::clear</a></div><div class="ttdeci">void clear(benchmark::State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="benchmark_8cpp_source.xhtml#l00047">benchmark.cpp:47</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1benchmark_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1benchmark.xhtml">fcarouge::benchmark</a></div><div class="ttdoc">Benchmark implementation.</div><div class="ttdef"><b>Definition:</b> <a href="benchmark_8cpp_source.xhtml#l00042">benchmark.cpp:43</a></div></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespacefcarouge.xhtml">   43</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefcarouge_1_1benchmark.xhtml">fcarouge::benchmark</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml">   45</a></span>&#160;<span class="keyword">namespace</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a0085ad9314d6941d08b21f0e515b657d">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a0085ad9314d6941d08b21f0e515b657d">bench</a>(::benchmark::State &amp;state)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : state) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; state.range(0); ++i) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    ::benchmark::ClobberMemory();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> start{ std::chrono::high_resolution_clock::now() };</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Measure.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ::benchmark::ClobberMemory();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> end{ std::chrono::high_resolution_clock::now() };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    state.SetIterationTime(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::chrono::duration_cast&lt;std::chrono::duration&lt;double&gt;&gt;(end - start)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            .count());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;BENCHMARK(<a class="code" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a0085ad9314d6941d08b21f0e515b657d">bench</a>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a399584f63a6ad625e0ae550bd61c3908">   68</a></span>&#160;    -&gt;Name(<span class="stringliteral">&quot;Bench&quot;</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    -&gt;Unit(::benchmark::kNanosecond)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    -&gt;ComputeStatistics(<span class="stringliteral">&quot;min&quot;</span>,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        [](<span class="keyword">const</span> std::vector&lt;double&gt; &amp;v) -&gt; <span class="keywordtype">double</span> {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                          <span class="keywordflow">return</span> *(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                              std::min_element(std::begin(v), std::end(v)));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        })</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    -&gt;ComputeStatistics(<span class="stringliteral">&quot;max&quot;</span>,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        [](<span class="keyword">const</span> std::vector&lt;double&gt; &amp;v) -&gt; <span class="keywordtype">double</span> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                          <span class="keywordflow">return</span> *(</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                              std::max_element(std::begin(v), std::end(v)));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        })</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    -&gt;Arg(0)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    -&gt;UseManualTime()</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    -&gt;Complexity(::benchmark::oAuto)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    -&gt;DisplayAggregatesOnly(<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    -&gt;RangeMultiplier(2)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    -&gt;Repetitions(10)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    -&gt;Range(1, 1 &lt;&lt; 28);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;} <span class="comment">// namespace fcarouge::benchmark</span></div>
+<div class="ttc" id="anamespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03_xhtml_a0085ad9314d6941d08b21f0e515b657d"><div class="ttname"><a href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a0085ad9314d6941d08b21f0e515b657d">fcarouge::benchmark::anonymous_namespace{benchmark.cpp}::bench</a></div><div class="ttdeci">void bench(::benchmark::State &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="benchmark_8cpp_source.xhtml#l00048">benchmark.cpp:48</a></div></div>
+<div class="ttc" id="anamespacefcarouge_1_1benchmark_xhtml"><div class="ttname"><a href="namespacefcarouge_1_1benchmark.xhtml">fcarouge::benchmark</a></div><div class="ttdoc">Benchmark implementation.</div><div class="ttdef"><b>Definition:</b> <a href="benchmark_8cpp_source.xhtml#l00043">benchmark.cpp:44</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_44cec6e3ea30e076b9313c4641539d9f.xhtml">benchmark</a></li><li class="navelem"><a class="el" href="benchmark_8cpp.xhtml">benchmark.cpp</a></li>
-    <li class="footer">Generated on Mon Feb 21 2022 23:25:59 for Project by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Feb 22 2022 04:15:41 for Project by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

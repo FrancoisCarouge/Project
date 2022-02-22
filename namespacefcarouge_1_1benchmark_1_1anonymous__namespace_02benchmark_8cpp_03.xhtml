@@ -92,52 +92,52 @@ $(document).ready(function(){initNavTree('namespacefcarouge_1_1benchmark_1_1anon
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3e3a46ce679cdd2992ef4d401ae35acc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a3e3a46ce679cdd2992ef4d401ae35acc">clear</a> (benchmark::State &amp;state)</td></tr>
-<tr class="separator:a3e3a46ce679cdd2992ef4d401ae35acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a040b125e85bc9bb4098d4910a738dcfe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a040b125e85bc9bb4098d4910a738dcfe">Name</a> (&quot;Benchmark&quot;) -&gt; Unit(benchmark::kNanosecond) -&gt;ComputeStatistics(&quot;min&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::min_element(std::begin(v), std::end(v)));}) -&gt;ComputeStatistics(&quot;max&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::max_element(std::begin(v), std::end(v)));}) -&gt;Arg(0) -&gt;UseManualTime() -&gt;Complexity(benchmark::oAuto) -&gt;DisplayAggregatesOnly(true) -&gt;RangeMultiplier(2) -&gt;Repetitions(10) -&gt;Range(1, 1&lt;&lt; 28)</td></tr>
-<tr class="separator:a040b125e85bc9bb4098d4910a738dcfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0085ad9314d6941d08b21f0e515b657d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a0085ad9314d6941d08b21f0e515b657d">bench</a> (::benchmark::State &amp;state)</td></tr>
+<tr class="separator:a0085ad9314d6941d08b21f0e515b657d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a399584f63a6ad625e0ae550bd61c3908"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml#a399584f63a6ad625e0ae550bd61c3908">Name</a> (&quot;Bench&quot;) -&gt; Unit(::benchmark::kNanosecond) -&gt;ComputeStatistics(&quot;min&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::min_element(std::begin(v), std::end(v)));}) -&gt;ComputeStatistics(&quot;max&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::max_element(std::begin(v), std::end(v)));}) -&gt;Arg(0) -&gt;UseManualTime() -&gt;Complexity(::benchmark::oAuto) -&gt;DisplayAggregatesOnly(true) -&gt;RangeMultiplier(2) -&gt;Repetitions(10) -&gt;Range(1, 1&lt;&lt; 28)</td></tr>
+<tr class="separator:a399584f63a6ad625e0ae550bd61c3908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3e3a46ce679cdd2992ef4d401ae35acc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e3a46ce679cdd2992ef4d401ae35acc">&#9670;&nbsp;</a></span>clear()</h2>
+<a id="a0085ad9314d6941d08b21f0e515b657d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0085ad9314d6941d08b21f0e515b657d">&#9670;&nbsp;</a></span>bench()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void fcarouge::benchmark::anonymous_namespace{benchmark.cpp}::clear </td>
+          <td class="memname">void fcarouge::benchmark::anonymous_namespace{benchmark.cpp}::bench </td>
           <td>(</td>
-          <td class="paramtype">benchmark::State &amp;&#160;</td>
+          <td class="paramtype">::benchmark::State &amp;&#160;</td>
           <td class="paramname"><em>state</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section user"><dt>Benchmark</dt><dd>Measure the performance of the container's clearing algorithm. </dd></dl>
+<dl class="section user"><dt>Benchmark</dt><dd>Measure performance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="benchmark_8cpp_source.xhtml#l00047">47</a> of file <a class="el" href="benchmark_8cpp_source.xhtml">benchmark.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : state) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; state.range(0); ++i) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    benchmark::ClobberMemory();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> start{ std::chrono::high_resolution_clock::now() };</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Measure.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    benchmark::ClobberMemory();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> end{ std::chrono::high_resolution_clock::now() };</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    state.SetIterationTime(</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::chrono::duration_cast&lt;std::chrono::duration&lt;double&gt;&gt;(end - start)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            .count());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="benchmark_8cpp_source.xhtml#l00048">48</a> of file <a class="el" href="benchmark_8cpp_source.xhtml">benchmark.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : state) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; state.range(0); ++i) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    ::benchmark::ClobberMemory();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> start{ std::chrono::high_resolution_clock::now() };</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Measure.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ::benchmark::ClobberMemory();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> end{ std::chrono::high_resolution_clock::now() };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    state.SetIterationTime(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::chrono::duration_cast&lt;std::chrono::duration&lt;double&gt;&gt;(end - start)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            .count());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a040b125e85bc9bb4098d4910a738dcfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a040b125e85bc9bb4098d4910a738dcfe">&#9670;&nbsp;</a></span>Name()</h2>
+<a id="a399584f63a6ad625e0ae550bd61c3908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a399584f63a6ad625e0ae550bd61c3908">&#9670;&nbsp;</a></span>Name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,9 +145,9 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">fcarouge::benchmark::anonymous_namespace{benchmark.cpp}::Name </td>
           <td>(</td>
-          <td class="paramtype">&quot;Benchmark&quot;&#160;</td>
+          <td class="paramtype">&quot;Bench&quot;&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt;  Unit(benchmark::kNanosecond) -&gt;ComputeStatistics(&quot;min&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::min_element(std::begin(v), std::end(v)));}) -&gt;ComputeStatistics(&quot;max&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::max_element(std::begin(v), std::end(v)));}) -&gt;Arg(0) -&gt;UseManualTime() -&gt;Complexity(benchmark::oAuto) -&gt;DisplayAggregatesOnly(true) -&gt;RangeMultiplier(2) -&gt;Repetitions(10) -&gt;Range(1, 1&lt;&lt; 28)</td>
+          <td> -&gt;  Unit(::benchmark::kNanosecond) -&gt;ComputeStatistics(&quot;min&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::min_element(std::begin(v), std::end(v)));}) -&gt;ComputeStatistics(&quot;max&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::max_element(std::begin(v), std::end(v)));}) -&gt;Arg(0) -&gt;UseManualTime() -&gt;Complexity(::benchmark::oAuto) -&gt;DisplayAggregatesOnly(true) -&gt;RangeMultiplier(2) -&gt;Repetitions(10) -&gt;Range(1, 1&lt;&lt; 28)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -160,7 +160,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.xhtml">fcarouge</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1benchmark.xhtml">benchmark</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml">anonymous_namespace{benchmark.cpp}</a></li>
-    <li class="footer">Generated on Mon Feb 21 2022 23:25:59 for Project by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue Feb 22 2022 04:15:42 for Project by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
