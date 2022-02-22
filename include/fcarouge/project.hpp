@@ -36,7 +36,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org> */
 
-
 #ifndef FCAROUGE_PROJECT_HPP
 #define FCAROUGE_PROJECT_HPP
 
@@ -44,5 +43,11 @@ For more information, please refer to <https://unlicense.org> */
 //! @brief Library header file.
 //!
 //! @details Library code starts here.
+
+namespace fcarouge
+{
+// Library goes here.
+
+} // namespace fcarouge
 
 #endif // FCAROUGE_PROJECT_HPP

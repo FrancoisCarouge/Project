@@ -15,11 +15,12 @@ jobs:
     - name: Update
       run: |
         wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-        sudo add-apt-repository -s 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal main'
+        sudo add-apt-repository -s "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main"
         sudo apt update
+        sudo apt install
     - name: Install
       run: sudo apt install clang-14 lldb-14 lld-14 libc++-14-dev libc++abi-14-dev
     - name: Build
-      run: clang++-14 sample/*.cpp source/*.cpp test/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++23 -stdlib=libc++
+      run: clang++-14 sample/*.cpp source/*.cpp test/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2b -stdlib=libc++
     - name: Run
       run: ./a.out
