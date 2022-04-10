@@ -17,4 +17,8 @@ jobs:
     - name: Install
       run: sudo apt install clang-tidy-12
     - name: Tidy
-      run: clang-tidy-12 include/fcarouge/project.hpp --warnings-as-errors=* -- -std=c++2b
+      run: |
+        FILES=`find . -iname *.hpp`
+        clang-tidy-12 ${FILES} \
+          --warnings-as-errors=* \
+          -- -x c++ -Wall -Wextra -pedantic -std=c++2b -Iinclude
