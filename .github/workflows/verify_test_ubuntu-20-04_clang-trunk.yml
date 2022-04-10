@@ -17,7 +17,6 @@ jobs:
         wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
         sudo add-apt-repository -s "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-14 main"
         sudo apt update
-        sudo apt install
     - name: Install
       run: sudo apt install clang-14 lldb-14 lld-14 libc++-14-dev libc++abi-14-dev
     - name: Build

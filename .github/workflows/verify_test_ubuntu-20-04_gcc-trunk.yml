@@ -16,7 +16,6 @@ jobs:
       run: |
         wget http://kayari.org/gcc-latest/gcc-latest.deb
         sudo dpkg -i gcc-latest.deb
-        sudo apt install
     - name: Build
       run: LD_LIBRARY_PATH=/opt/gcc-latest/lib64 LD_RUN_PATH=/opt/gcc-latest/lib64 /opt/gcc-latest/bin/gcc sample/*.cpp test/*.cpp source/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++23 -lstdc++
     - name: Run
