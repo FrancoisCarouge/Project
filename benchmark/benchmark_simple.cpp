@@ -36,11 +36,48 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org> */
 
-//! @brief Entry point to support the library.
-//!
-//! @details A valid and empty point of entry is provided to support the tests
-//! and samples. No further code necessary here.
-auto main() -> int
+#include "fcarouge/benchmark/benchmark.hpp"
+
+#include <benchmark/benchmark.h>
+
+#include <algorithm>
+#include <chrono>
+
+namespace fcarouge::benchmark
 {
-  return 0;
+namespace
+{
+//! @benchmark Measure performance.
+void benchmark_simple(::benchmark::State &state)
+{
+  for (auto _ : state) {
+    const auto start{ clock::now() };
+    ::benchmark::ClobberMemory();
+
+    // Measure.
+
+    ::benchmark::ClobberMemory();
+    const auto end{ clock::now() };
+
+    state.SetIterationTime(
+        std::chrono::duration_cast<std::chrono::duration<double>>(end - start)
+            .count());
+  }
 }
+
+BENCHMARK(benchmark_simple)
+    ->Name("Benchmark Simple")
+    ->Unit(::benchmark::kNanosecond)
+    ->ComputeStatistics("min",
+                        [](const auto &results) {
+                          return std::ranges::min(results);
+                        })
+        -> ComputeStatistics("max",
+                             [](const auto &results) {
+                               return std::ranges::max(results);
+                             }) -> UseManualTime()
+            -> Complexity(::benchmark::oAuto) -> DisplayAggregatesOnly(true)
+                -> Repetitions(10);
+
+} // namespace
+} // namespace fcarouge::benchmark
