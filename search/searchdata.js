@@ -5,7 +5,8 @@ var indexSectionsWithContent =
   2: "bcdilmprst",
   3: "bmn",
   4: "bcfiklmopsu",
-  5: "cpst"
+  5: "c",
+  6: "cpst"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "pages"
+  5: "typedefs",
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Files",
   3: "Functions",
   4: "Variables",
-  5: "Pages"
+  5: "Typedefs",
+  6: "Pages"
 };
 

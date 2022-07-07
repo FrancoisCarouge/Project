@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['anonymous_5fnamespace_7bbenchmark_2ecpp_7d_0',['anonymous_namespace{benchmark.cpp}',['../namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark_8cpp_03.xhtml',1,'fcarouge::benchmark']]],
-  ['anonymous_5fnamespace_7bsample_2ecpp_7d_1',['anonymous_namespace{sample.cpp}',['../namespacefcarouge_1_1sample_1_1anonymous__namespace_02sample_8cpp_03.xhtml',1,'fcarouge::sample']]],
-  ['anonymous_5fnamespace_7btest_2ecpp_7d_2',['anonymous_namespace{test.cpp}',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02test_8cpp_03.xhtml',1,'fcarouge::test']]],
-  ['benchmark_3',['benchmark',['../namespacefcarouge_1_1benchmark.xhtml',1,'fcarouge']]],
-  ['fcarouge_4',['fcarouge',['../namespacefcarouge.xhtml',1,'']]],
-  ['internal_5',['internal',['../namespacefcarouge_1_1internal.xhtml',1,'fcarouge']]],
-  ['sample_6',['sample',['../namespacefcarouge_1_1sample.xhtml',1,'fcarouge']]],
-  ['test_7',['test',['../namespacefcarouge_1_1test.xhtml',1,'fcarouge']]]
+  ['anonymous_5fnamespace_7bbenchmark_5ffull_2ecpp_7d_0',['anonymous_namespace{benchmark_full.cpp}',['../namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark__full_8cpp_03.xhtml',1,'fcarouge::benchmark']]],
+  ['anonymous_5fnamespace_7bbenchmark_5fsimple_2ecpp_7d_1',['anonymous_namespace{benchmark_simple.cpp}',['../namespacefcarouge_1_1benchmark_1_1anonymous__namespace_02benchmark__simple_8cpp_03.xhtml',1,'fcarouge::benchmark']]],
+  ['anonymous_5fnamespace_7bsample_2ecpp_7d_2',['anonymous_namespace{sample.cpp}',['../namespacefcarouge_1_1sample_1_1anonymous__namespace_02sample_8cpp_03.xhtml',1,'fcarouge::sample']]],
+  ['anonymous_5fnamespace_7btest_2ecpp_7d_3',['anonymous_namespace{test.cpp}',['../namespacefcarouge_1_1test_1_1anonymous__namespace_02test_8cpp_03.xhtml',1,'fcarouge::test']]],
+  ['benchmark_4',['benchmark',['../namespacefcarouge_1_1benchmark.xhtml',1,'fcarouge']]],
+  ['fcarouge_5',['fcarouge',['../namespacefcarouge.xhtml',1,'']]],
+  ['internal_6',['internal',['../namespacefcarouge_1_1internal.xhtml',1,'fcarouge']]],
+  ['sample_7',['sample',['../namespacefcarouge_1_1sample.xhtml',1,'fcarouge']]],
+  ['test_8',['test',['../namespacefcarouge_1_1test.xhtml',1,'fcarouge']]]
 ];
