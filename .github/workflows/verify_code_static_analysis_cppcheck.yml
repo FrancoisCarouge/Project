@@ -8,13 +8,21 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
-    - name: Update
-      run: sudo apt update
+      uses: actions/checkout@v3.0.2
     - name: Install
-      run: sudo apt install cppcheck
+      run: |
+        ( cd /tmp ; mkdir cppcheck ;
+          git clone --depth 1 https://github.com/danmar/cppcheck.git ;
+          ( cd cppcheck ;
+            mkdir build ) ;
+          ( cd cppcheck/build ; 
+            cmake .. ; 
+            cmake --build . ; 
+            sudo make install ) )
+    - name: Version
+      run: cppcheck --version
     - name: Check
       run: cppcheck --verbose --suppressions-list=.cppcheck --error-exitcode=1 --enable=all -I include .
