@@ -11,10 +11,12 @@ jobs:
     runs-on: windows-2019
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3.0.2
     - name: Install
       uses: ilammy/msvc-dev-cmd@v1.10.0
     - name: Version
       run: cl
     - name: Build
-      run: cl /EHsc /std:c++latest /I include /TP sample/*.cpp source/*.cpp test/*.cpp
+      run: cl /EHsc /std:c++latest /I include /TP sample/*.cpp source/*.cpp test/*.cpp /Fe:kalman.exe
+    - name: Run
+      run: ./kalman.exe

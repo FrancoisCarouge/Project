@@ -8,17 +8,17 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3.0.2
     - name: Update
       run: sudo apt update
     - name: Install
-      run: sudo apt install clang-tidy-12
+      run: sudo apt install clang-tidy-13
     - name: Tidy
       run: |
         FILES=`find . -iname *.hpp`
-        clang-tidy-12 ${FILES} \
+        clang-tidy-13 ${FILES} \
           --warnings-as-errors=* \
           -- -x c++ -Wall -Wextra -pedantic -std=c++2b -Iinclude
