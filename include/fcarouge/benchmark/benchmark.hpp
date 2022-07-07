@@ -36,54 +36,23 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org> */
 
-#include <benchmark/benchmark.h>
-#include <cassert>
+#ifndef FCAROUGE_BENCHMARK_BENCHMARK_HPP
+#define FCAROUGE_BENCHMARK_BENCHMARK_HPP
+
+//! @file
+//! @brief Benchmarking support.
+
 #include <chrono>
+#include <type_traits>
 
 namespace fcarouge::benchmark
 {
-namespace
-{
-//! @benchmark Measure performance.
-void bench(::benchmark::State &state)
-{
-  for (auto _ : state) {
-    for (int i = 0; i < state.range(0); ++i) {
-    }
-    ::benchmark::ClobberMemory();
-    const auto start{ std::chrono::high_resolution_clock::now() };
 
-    // Measure.
+//! @brief Type of the platform steady benchmark clock.
+using clock = std::conditional_t<std::chrono::high_resolution_clock::is_steady,
+                                 std::chrono::high_resolution_clock,
+                                 std::chrono::steady_clock>;
 
-    ::benchmark::ClobberMemory();
-    const auto end{ std::chrono::high_resolution_clock::now() };
-
-    state.SetIterationTime(
-        std::chrono::duration_cast<std::chrono::duration<double>>(end - start)
-            .count());
-  }
-}
-
-BENCHMARK(bench)
-    ->Name("Bench")
-    ->Unit(::benchmark::kNanosecond)
-    ->ComputeStatistics("min",
-                        [](const std::vector<double> &v) -> double {
-                          return *(
-                              std::min_element(std::begin(v), std::end(v)));
-                        })
-    ->ComputeStatistics("max",
-                        [](const std::vector<double> &v) -> double {
-                          return *(
-                              std::max_element(std::begin(v), std::end(v)));
-                        })
-    ->Arg(0)
-    ->UseManualTime()
-    ->Complexity(::benchmark::oAuto)
-    ->DisplayAggregatesOnly(true)
-    ->RangeMultiplier(2)
-    ->Repetitions(10)
-    ->Range(1, 1 << 28);
-
-} // namespace
 } // namespace fcarouge::benchmark
+
+#endif // FCAROUGE_BENCHMARK_BENCHMARK_HPP
